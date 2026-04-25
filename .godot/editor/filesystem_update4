@@ -1,0 +1,6 @@
+res://root.tscn
+res://assets/theme.tres
+res://root.gd
+res://AutoLoad Scripts/NetworkManager.gd
+res://game.gd
+res://player.gd

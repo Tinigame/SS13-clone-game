@@ -14,6 +14,7 @@ const MAX_CONNECTIONS = 5
 # This will contain player info for every player,
 # with the keys being each player's unique IDs.
 var players = {}
+var local_player_name = "Fella"
 
 var connection_type := "player"
 
@@ -29,7 +30,8 @@ func _ready():
 		create_game()
 
 
-func join_game(address = ""):
+func join_game(address = "", thingname = ""):
+	local_player_name = thingname
 	print("Joining")
 	if address.is_empty():
 		address = DEFAULT_SERVER_IP
@@ -61,7 +63,7 @@ func create_game():
 # When a peer connects, send them my player info.
 # This allows transfer of all desired data for each player, not only the unique ID.
 func _on_player_connected(id):
-	_register_player.rpc_id(id, connection_type)
+	_register_player.rpc_id(id, local_player_name)
 
 
 @rpc("any_peer", "reliable")
@@ -80,7 +82,7 @@ func _on_player_disconnected(id):
 func _on_connected_ok():
 	print("Connected")
 	var peer_id = multiplayer.get_unique_id()
-	players[peer_id] = connection_type
+	players[peer_id] = local_player_name
 	player_connected.emit(peer_id, connection_type)
 
 

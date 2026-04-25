@@ -1,5 +1,8 @@
 extends Node
 
+@onready var ip_bar: LineEdit = $"MainMenuStuff/IP bar"
+@onready var name_bar: LineEdit = $"MainMenuStuff/Name bar"
+
 @export var level_scene: PackedScene
 var dedicated_correction := 0
 
@@ -40,8 +43,15 @@ func load_game():
 	$MainMenuStuff.visible = false
 	
 func join_game():
-	NetworkManager.join_game()
-	# Start a timer to check if joining
+	var player_name = name_bar.text.strip_edges()
+	if player_name == "":
+		player_name = "Fella"
+
+	if ip_bar.text == "":
+		NetworkManager.join_game("", player_name)
+	else:
+		NetworkManager.join_game(ip_bar.text, player_name)
+
 	connection_timer.start()
 	$MainMenuStuff/PlayersJoined.text = "Joining..."
 	$MainMenuStuff/PlayersJoined.visible = true

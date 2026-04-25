@@ -44,14 +44,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 183.0
-offset_top = 718.0
-offset_right = 1697.0
-offset_bottom = 914.0
+offset_left = 12.0
+offset_top = 316.0
+offset_right = 1889.0
+offset_bottom = 469.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_vvh5c")
-theme_override_constants/separation = 25
+theme_override_constants/separation = 10
 metadata/_edit_group_ = true
 
 [node name="Start" type="Button" parent="MainMenuStuff/ButtonContainer" unique_id=662596701]
@@ -76,6 +76,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Quit"
 
+[node name="IP bar" type="LineEdit" parent="MainMenuStuff" unique_id=2129703786]
+layout_mode = 1
+offset_left = 723.0
+offset_top = 564.0
+offset_right = 1157.0
+offset_bottom = 683.0
+theme_override_font_sizes/font_size = 58
+placeholder_text = "127.0.0.1:22222"
+
+[node name="Name bar" type="LineEdit" parent="MainMenuStuff" unique_id=1526148720]
+layout_mode = 1
+offset_left = 723.0
+offset_top = 658.0
+offset_right = 1157.0
+offset_bottom = 777.0
+theme_override_font_sizes/font_size = 58
+placeholder_text = "Name (fella)"
+
 [node name="PlayersJoined" type="Label" parent="MainMenuStuff" unique_id=2048402072]
 layout_mode = 1
 anchors_preset = 7
@@ -84,9 +102,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 651.0
-offset_top = 605.0
+offset_top = 214.0
 offset_right = 1229.0
-offset_bottom = 693.0
+offset_bottom = 302.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_vvh5c")
@@ -98,10 +116,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1878.0
-offset_top = -174.0
-offset_right = 3758.0
-offset_bottom = 698.0
+offset_left = -1881.0
+offset_top = -408.0
+offset_right = 3755.0
+offset_bottom = 237.0
 grow_horizontal = 2
 theme = ExtResource("2_vvh5c")
 theme_override_font_sizes/font_size = 256
